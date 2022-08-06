@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Whether</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  </head>
+  <body>
+    <input type="text" id="city" placeholder="What's your city?" />
+    <button id="search" class="fa fa-search"></button>
+    <div class="main"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script id="first" type="text/x-handlebars-template">
+      {{#each cities}}
+        <div class="city">
+          <span class="temp">{{temperature}}</span>
+           <img src="{{conditionPic}}" alt="">
+          <h3 >{{name}}</h3>
+          <span class="condition">{{condition}}</span>
+          {{#if isSaved}}
+          <button class="delete fa fa-trash"></button>
+          {{else}}
+          <button class="save fa fa-plus"></button>
+          {{/if}}
+        </div>
+      {{/each}}
+    </script>
+    <script src="https://use.fontawesome.com/3f97962753.js"></script>
+    <script src="Model.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
